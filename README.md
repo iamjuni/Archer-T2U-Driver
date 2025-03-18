@@ -17,7 +17,9 @@ Compatible with **Linux kernel versions 5.4 and newer** as long as your distro h
 
 #### Supported USB Dongles
 TP-Link Archer T2U Plus
+
 TP-Link Archer T2U Nano
+
 TP-Link Archer T2U
 
 ---
