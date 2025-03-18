@@ -15,11 +15,10 @@ Update: There is now also a driver for RTL8814AE PCIe cards, ID 10ec:8813. lspci
 Compatible with **Linux kernel versions 5.4 and newer** as long as your distro hasn't modified any kernel APIs. RHEL and all distros based on RHEL will have modified kernel APIs and are unlikely to be compatible with this driver.
 
 
-#### Supported Chipsets
-- **PCIe**: RTL8723DE, RTL8821CE, RTL8822BE, RTL8822CE, RTL8814AE
-- **SDIO**: RTL8723CS, RTL8723DS, RTL8821CS, RTL8822BS, RTL8822CS
-- **USB** : RTL8723DU, RTL8811AU, RTL8811CU, RTL8812AU, RTL8812BU, RTL8812CU
-- **USB** : RTL8814AU, RTL8821AU, RTL8821CU, RTL8822BU, RTL8822CU
+#### Supported USB Dongles
+TP-Link Archer T2U Plus
+TP-Link Archer T2U Nano
+TP-Link Archer T2U
 
 ---
 
