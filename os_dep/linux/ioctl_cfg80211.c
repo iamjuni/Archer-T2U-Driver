@@ -461,7 +461,7 @@ u8 rtw_cfg80211_ch_switch_notify(_adapter *adapter, u8 ch, u8 bw, u8 offset,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 19, 0))
 	if (started) {
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 3, 0)) && (LINUX_VERSION_CODE < KERNEL_VERSION(6, 9, 0)) \
-    || (RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0))
+    || ((RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0)) && (RHEL_RELEASE_CODE < RHEL_RELEASE_VERSION(9, 99)))
 		cfg80211_ch_switch_started_notify(adapter->pnetdev, &chdef, 0, 0, false, 0);
 #elif (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 1, 0))
 		cfg80211_ch_switch_started_notify(adapter->pnetdev, &chdef, 0, 0, false);
@@ -478,7 +478,7 @@ u8 rtw_cfg80211_ch_switch_notify(_adapter *adapter, u8 ch, u8 bw, u8 offset,
 		goto exit;
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 3, 0)) && (LINUX_VERSION_CODE < KERNEL_VERSION(6, 9, 0)) \
-    || (RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0))
+    || ((RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0)) && (RHEL_RELEASE_CODE < RHEL_RELEASE_VERSION(9, 99)))
 	cfg80211_ch_switch_notify(adapter->pnetdev, &chdef, 0, 0);
 #elif (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 19, 2))
 	cfg80211_ch_switch_notify(adapter->pnetdev, &chdef, 0);
@@ -4327,6 +4327,9 @@ if(type == NL80211_TX_POWER_FIXED) {
 static int cfg80211_rtw_get_txpower(struct wiphy *wiphy,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 8, 0))
 	struct wireless_dev *wdev,
+#endif
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 14, 0))
+	unsigned int link_id,
 #endif
 	int *dbm)
 {
