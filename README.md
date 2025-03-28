@@ -1,20 +1,16 @@
 
 
-### Basic Installation for All Distros 🛠
-
+### Basic Installation for Ubuntu 🛠
 ```bash
-git clone https://github.com/lwfinger/rtw88
+sudo apt install dkms git build-essential libelf-dev linux-headers-$(uname -r)
 ```
 ```bash
-cd rtw88
+git clone https://github.com/iamjuni/Archer-T2U-Driver.git
 ```
 ```bash
-make
+cd Archer-T2U-Driver
 ```
 ```bash
-sudo make install
-```
-```bash
-sudo make install_fw
+sudo make dkms_install
 ```
 ---
